@@ -29,11 +29,10 @@
         console.log(var_uno / var_dos);
         console.log(var_uno * var_dos);
 
-
         //operadores de comparacion
-        = asignacion
-        == comparacion (valor)
-        === estrictamente comparado (valor y el tipo de dato)
+        // = asignacion
+        // == comparacion (valor)
+        // === estrictamente comparado (valor y el tipo de dato)
         // < / > / <= / >=
 
 
@@ -46,15 +45,21 @@
             showConfirmButton: false,
             timer: 2000
           });
+
+          document.getElementById("text").innerText = "el array a calcular es: " + arraw_num;
+          document.getElementById("impresion").value = arraw_num;
     }
 function send_form(){
     let name      = document.getElementById("name").value;
     let last_name = document.getElementById("lastname").value; 
     if(name.length == 0 || last_name.length == 0){
-
-    }
+        swal.fire({ 
+            title: "cajas de texto vacio",
+            text: "algunas de las cajas de texto se encuentran vacias",
+            icon: "error"
+        });
     if(name.length == 0){
-        document.getElementById("name").style.border = "2px solid red"
+        document.getElementById("name").style.border = "2px solid redelse"
     }else{
         document.getElementById("name").style.border = "2px solid red"
     }
@@ -62,7 +67,71 @@ function send_form(){
         document.getElementById("last_name").style.border = "2px solid red"
     }else{
         document.getElementById("last_name").style.border = "2px solid red"
-    }else{
-        document.getElementById("print").inn
     }
-} 
+}else{
+        document.getElementById("print").innerText = "su nombre es: "+name+ " "+ last_name;
+    }
+}
+
+// ARRAYS
+var array_semana = ["lunes","martes","miercoles","jueves","viernes","sabado","domingo"];
+var array_gral = [1,2,2,5,"abc","soy Sebastian"];
+var arraw_num = [1,2,3,4,5,6,7,8,9];
+
+var array_multi = [
+    {name: "Sebastian",age: 18, color: "green"},
+    {name: "wilder",age: 32, color: "yellow"},
+    {name: "maria",age: 25, color: "purple"},
+    {name: "andres",age: 59, color: "red"},
+]
+
+var json_ajn = {
+    name: "juan",
+    lastname: "Caicedo",
+    phone: "3187460940",
+    email: "jsroperoc@ufpso.edu.co"
+};
+
+console.log(array_semana);
+console.log(array_gral);
+console.log(array_num);
+console.log(array_multi);
+console.log(json_ajn);
+
+function action(){
+    // alert(array_num);
+    // swal.fire(""+arraw_num);
+    console.log(array_num);
+    console.log(array_num.length);
+    for(let i=0; i<array_num.length; i++){
+        result = result+array_num[1]
+    }    
+    document.getElementById("result").innerHTML = "<strong>El resultado es"+resultado+"</strong>"
+    document.getElementById("result").style.color = "green";
+
+    var total = 0;
+    for(var j = 0; j<array_multi.length; j++){
+        total = array_multi[j].age + total;
+    } 
+    alert(total);
+
+    var total_dos = 0;
+    var m = 0;
+    while(m<array_multi.length){
+        total_dos2 = array_multi[m].age + total_dos;
+        m++;
+    }
+    alert(total_dos);
+}
+var arraw_numerico = [1,2,3,4,5,6,7,8,9];
+
+function eliminar(){
+    let array_delete = array_numerico.pop();
+    console.log(array_delete);
+}
+
+function agregar(){
+    let array_add = array_numerico.push(10);
+    console.log(array_add);
+    console.log(array_numerico);
+}
