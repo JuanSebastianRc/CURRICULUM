@@ -6,21 +6,27 @@
     <title>aprendiendo JS</title>
 </head>
 <body onload="load_page()">
+<div >
     <div>
         <label for="name">name: </label>
-        <input type="text" id="name">
+        <input type="text" id="name" autocomplete="off">
     </div>
     <div>
         <label for="last_name">lastname: </label>
-        <input type="text" id="last_name">   
+        <input type="text" id="last_name" placeholder="ingrese su apellido">   
     </div>
     <div>
         <button id="send" ondblclick="send_form()">ENVIAR</button>
     </div>
-    <div>
-        
-    </div>
-
+    <div id="print"></div>
+    <div id="text"></div>
+    <div><button ondblclick="action()">calcular</button></div>
+    <div id="result"></div>
+</div>
+<div>
+    <button onclick="agregar()">AGREGAR</button>
+    <button onclick="eliminar()">ELIMINAR</button>
+</div>
 
     <!-- <script> -->
         <!-- alert("hola mundo"); -->
