@@ -48,26 +48,59 @@
 
           document.getElementById("text").innerText = "el array a calcular es: " + array_num;
           document.getElementById("impresion").value = array_num;
+          document.getElementById("name_search").value = nombre_fore;
+
+          let hour_system = new date();
+          let dia = hour_system.getDay();
+          console.log(hour_system.getDate());
+          console.log(hour_system.getDaty());
+          console.log(hour_system.getfullYear());
+          console.log(hour_system.getHours());
+          console.log(hour_system.getMilliseconds());
+          console.log(hour_system.getMinutes());
+          console.log(hour_system.getMonth());
+          console.log(hour_system.getSeconds());
+          console.log(hour_system.getTime());
+
+          let dias = ["domingo","lunes","martes","miercoles","jueves","viernes","sabado"];
+          for(let i = 0; i<dias.length; i++){
+            console.log(dias[dias]);
+          }
+
+          console.log("hoy es: "+dias[dias]);
+          let dia_mes = hour_system.getMonth() + 1;
+          console.log(hour_system.getDate()+ "/" + hour_system.getfullYear());
+          document.getElementById("hour_system").value = hour_system;
     }
+
 function send_form(){
     let name      = document.getElementById("name").value;
-    let last_name = document.getElementById("lastname").value; 
-    if(name.length == 0 || last_name.length == 0){
-        swal.fire({ 
+    let last_name = document.getElementById("last_name").value; 
+    let pass_one = document.getElementById("pass_one").value; 
+    let pass_two = document.getElementById("pass_two").value; 
+    if(name.length == 0 || last_name.length == 0 || pass_one.length == 0 || pass_two.length == 0){
+        Swal.fire({ 
             title: "cajas de texto vacio",
             text: "algunas de las cajas de texto se encuentran vacias",
             icon: "error"
         });
-    if(name.length == 0){
-        document.getElementById("name").style.border = "2px solid redelse"
-    }else{
-        document.getElementById("name").style.border = "2px solid red"
-    }
-    if(last_name.length == 0){
-        document.getElementById("last_name").style.border = "2px solid red"
-    }else{
-        document.getElementById("last_name").style.border = "2px solid red"
-    }
+//     if(name.length == 0){
+//         document.getElementById("name").style.border = "2px solid redelse"
+//     }else{
+//         document.getElementById("name").style.border = "2px solid red"
+//     }
+//     if(last_name.length == 0){
+//         document.getElementById("last_name").style.border = "2px solid red"
+//     }else{
+//         document.getElementById("last_name").style.border = "2px solid red"
+//     }
+    }else if(pass_one != pass_two){
+    Swal.fire({ 
+        title: "cajas de texto vacio",
+        text: "algunas de las cajas de texto se encuentran vacias",
+        icon: "error"
+    });
+
 }else{
         document.getElementById("print").innerText = "su nombre es: "+name+ " "+ last_name;
     }
@@ -168,4 +201,18 @@ function eliminar_prim(){
     console.log(array_numerico);
     document.getElementById("impresion").value = array_numerico;
 
+}
+
+
+
+var nombre_fore = "Juan Sebastian Ropero";
+
+function search(){
+    let nombre_buscar = document.getElementById("name_search").value;
+    // Swal.fire(nombre_buscar.tolowerCase());
+    Swal.fire({
+        title: nombre_buscar.tolowerCase(),
+        text: "alguna de las cajas de texto se encuentra vacia",
+        icon: "error"
+    });
 }
