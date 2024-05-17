@@ -46,8 +46,8 @@
             timer: 2000
           });
 
-          document.getElementById("text").innerText = "el array a calcular es: " + arraw_num;
-          document.getElementById("impresion").value = arraw_num;
+          document.getElementById("text").innerText = "el array a calcular es: " + array_num;
+          document.getElementById("impresion").value = array_num;
     }
 function send_form(){
     let name      = document.getElementById("name").value;
@@ -76,7 +76,7 @@ function send_form(){
 // ARRAYS
 var array_semana = ["lunes","martes","miercoles","jueves","viernes","sabado","domingo"];
 var array_gral = [1,2,2,5,"abc","soy Sebastian"];
-var arraw_num = [1,2,3,4,5,6,7,8,9];
+var array_num = [1,2,3,4,5,6,7,8,9];
 
 var array_multi = [
     {name: "Sebastian",age: 18, color: "green"},
@@ -101,12 +101,13 @@ console.log(json_ajn);
 function action(){
     // alert(array_num);
     // swal.fire(""+arraw_num);
-    console.log(array_num);
-    console.log(array_num.length);
+    // console.log(array_num);
+    // console.log(array_num.length);
+    result = 0;
     for(let i=0; i<array_num.length; i++){
-        result = result+array_num[1]
+        result = result+array_num[i]
     }    
-    document.getElementById("result").innerHTML = "<strong>El resultado es"+resultado+"</strong>"
+    document.getElementById("result").innerHTML = "<strong>El resultado es"+result+"</strong>"
     document.getElementById("result").style.color = "green";
 
     var total = 0;
@@ -118,20 +119,53 @@ function action(){
     var total_dos = 0;
     var m = 0;
     while(m<array_multi.length){
-        total_dos2 = array_multi[m].age + total_dos;
+        total_dos = array_multi[m].age + total_dos
         m++;
     }
     alert(total_dos);
 }
-var arraw_numerico = [1,2,3,4,5,6,7,8,9];
+var array_numerico = [1,2,3,4,5,6,7,8,9];
 
 function eliminar(){
-    let array_delete = array_numerico.pop();
+    let array_delete = array_numerico.pop("num");
     console.log(array_delete);
+    console.log(array_numerico);
+    document.getElementById("impresion").value = array_numerico;
 }
 
 function agregar(){
-    let array_add = array_numerico.push(10);
+    let num = document.getElementById("num").value;
+    let array_add = array_numerico.push(num);
     console.log(array_add);
     console.log(array_numerico);
+    document.getElementById("impresion").value = array_numerico;
+}
+
+function reves(){
+    document.getElementById("impresion").value = array_numerico.reverse();
+}
+
+function limpiar(){
+    document.getElementById("num").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("last_name").value = "";
+    document.getElementById("result").innerText = "";
+}
+
+function agregar_prim(){
+    let num4 = document.getElementById("num").value;
+    let array_add2 = array_numerico.unshift(array_numerico);
+    console.log(array_add2);
+    console.log(array_numerico);
+    document.getElementById("impresion").value = array_numerico;
+
+}
+
+function eliminar_prim(){
+    let num44 = document.getElementById("num").value;
+    let array_add22 = array_numerico.shift(array_numerico);
+    console.log(array_add22);
+    console.log(array_numerico);
+    document.getElementById("impresion").value = array_numerico;
+
 }
