@@ -6,7 +6,10 @@
     <title>aprendiendo JS</title>
 </head>
 <body onload="load_page()">
-<div >
+<div>
+        <input type="text" id="name_search" size="30" disabled>
+        <button onclick="search()">Buscar</button>
+    <br><br>
     <div>
         <label for="name">name: </label>
         <input type="text" id="name" autocomplete="off">
@@ -16,13 +19,24 @@
         <input type="text" id="last_name" placeholder="ingrese su apellido">   
     </div>
     <div>
-        <button id="send" ondblclick="send_form()">ENVIAR</button>
+        <label for="pass_one"> Ingrese contraseña</label>
+        <input type="password" id="pass_one" placeholder="Ingrese contraseña">
+    </div>
+    <div>
+        <label for="pass_two"> repita su contraseña</label>
+        <input type="password" id="pass_two" placeholder="Repita contraseña">
+    </div>
+    <div>
+        <button id="send" onclick="send_form()">ENVIAR</button>
     </div>
     <div id="print"></div>
+</div>
+<br><br>
     <div id="text"></div>
     <div><button ondblclick="action()">calcular</button></div>
     <div id="result"></div>
 </div>
+
 <div>
     <button onclick="agregar()">AGREGAR</button>
     <input type="text" id="num" size="1" placeholder="Num">
@@ -38,7 +52,7 @@
     <!-- <script> -->
         <!-- alert("hola mundo"); -->
     <!-- // </script> -->
-    <script src="/JS/sweetalert2@11.js"></script>
-    <script src="/JS/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../JS/functions.js"></script>
 </body>
 </html>
