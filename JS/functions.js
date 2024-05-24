@@ -53,7 +53,7 @@
           let hour_system = new date();
           let dia = hour_system.getDay();
           console.log(hour_system.getDate());
-          console.log(hour_system.getDaty());
+          console.log("Dia" + hour_system.getDaty());
           console.log(hour_system.getfullYear());
           console.log(hour_system.getHours());
           console.log(hour_system.getMilliseconds());
@@ -64,12 +64,12 @@
 
           let dias = ["domingo","lunes","martes","miercoles","jueves","viernes","sabado"];
           for(let i = 0; i<dias.length; i++){
-            console.log(dias[dias]);
+            console.log(dias[dia]);
           }
 
-          console.log("hoy es: "+dias[dias]);
+          console.log("hoy es: "+dias[dia]);
           let dia_mes = hour_system.getMonth() + 1;
-          console.log(hour_system.getDate()+ "/" + hour_system.getfullYear());
+          console.log(hour_system.getDate()+ "/"+dia_mes+"/"+ hour_system.getfullYear());
           document.getElementById("hour_system").value = hour_system;
     }
 
@@ -100,8 +100,8 @@ function send_form(){
         text: "algunas de las cajas de texto se encuentran vacias",
         icon: "error"
     });
-
-}else{
+}
+else{
         document.getElementById("print").innerText = "su nombre es: "+name+ " "+ last_name;
     }
 }
@@ -210,9 +210,14 @@ var nombre_fore = "Juan Sebastian Ropero";
 function search(){
     let nombre_buscar = document.getElementById("name_search").value;
     // Swal.fire(nombre_buscar.tolowerCase());
-    Swal.fire({
-        title: nombre_buscar.tolowerCase(),
-        text: "alguna de las cajas de texto se encuentra vacia",
-        icon: "error"
-    });
+    // Swal.fire({
+    //     title: nombre_buscar.tolowerCase(),
+    //     text: "alguna de las cajas de texto se encuentra vacia",
+    //     icon: "error"
+    // });
+    let word = nombre_buscar.split("");
+    Swal.fire(word+"");
+    console.log(word);
+    let word_com = word.join("");
+    console.log(word_com);
 }
